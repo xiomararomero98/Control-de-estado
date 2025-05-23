@@ -24,7 +24,7 @@ public class EstadoController {
     
     @Autowired
     private EstadoService estadoService;
-//obtener todos los usuarios
+//obtener todos los estados
     @GetMapping
     public ResponseEntity<List<Estado>>obtenerEstados(){
         List <Estado> estados = estadoService.ObtenerEstados();
@@ -34,7 +34,7 @@ public class EstadoController {
         return ResponseEntity.ok(estados);
     }
 
-    //obtener usuarios por Id
+    //obtener estados por Id
     @GetMapping("/{id}")
     public ResponseEntity<Estado> obtenerEstadoPorId(@PathVariable Long id){
         Optional <Estado> estado =estadoService.obtenerEstadoPorId(id);
