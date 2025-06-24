@@ -80,6 +80,7 @@ public class EstadoController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error al eliminar el estado"+ e.getMessage());
         }
     }
+    
 
 
 
