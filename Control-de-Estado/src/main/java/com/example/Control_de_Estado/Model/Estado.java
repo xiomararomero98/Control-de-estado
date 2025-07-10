@@ -1,15 +1,9 @@
 package com.example.Control_de_Estado.Model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import lombok.*;
 
 @Entity
 @Table(name = "estado")
@@ -25,8 +19,8 @@ public class Estado {
     @Schema(description = "Identificador único del estado", example = "1")
     private Long id;
 
+    @NotBlank(message = "El nombre del estado no puede estar vacío")
     @Column(nullable = false)
-    @Schema(description = "Nombre del estado", example = "Disponible")
+    @Schema(description = "Nombre del estado (ej: Disponible, Entregado, Agotado)", example = "Disponible")
     private String nombre;
-
 }
